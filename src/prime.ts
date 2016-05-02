@@ -16,7 +16,7 @@ class PrimeService implements PrimeInterface {
   }
 
   isPrime(n: number): boolean {
-    let currentDivisor = this.divisor;
+    let currentDivisor: number = this.divisor;
 
     while (n > currentDivisor) {
       if (n % currentDivisor === 0) {
@@ -36,9 +36,9 @@ class PrimeServiceExtended extends PrimeService implements PrimeInterfaceExtende
   }
 
   primeFactors(n: number): Array<number> {
-    let factors = [];
-    let currentDivisor = this.divisor;
-    let currentN = n;
+    let factors: Array<number> = [];
+    let currentDivisor: number = this.divisor;
+    let currentN: number = n;
 
     while (currentN > 2) {
       if (currentN % currentDivisor === 0) {

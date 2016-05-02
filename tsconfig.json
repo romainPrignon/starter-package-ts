@@ -5,7 +5,8 @@
     "outDir": "dist",
     "sourceMap": true,
     "noEmitHelpers": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
     "removeComments": false
   },
   "exclude": [
