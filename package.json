@@ -19,12 +19,12 @@
     "clean": "npm cache clean && rimraf -- node_modules typings coverage dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "commitmsg": "conventional-changelog-lint -e",
-    "coverage": "istanbul cover npm run test",
-    "karma": "./node_modules/.bin/karma",
     "lint": "tslint 'src/**/*.ts' 'spec/**/*.ts'",
     "postinstall": "npm run typings install",
-    "precommit": "npm run lint && npm run test",
-    "test": "npm run lint && npm run karma -- start",
+    "precommit": "npm run test",
+    "pretest": "npm run build",
+    "test": "npm run lint && istanbul cover jasmine",
+    "posttest": "remap-istanbul -i coverage/coverage.json -o coverage -t html",
     "typings": "typings"
   },
   "dependencies": {
