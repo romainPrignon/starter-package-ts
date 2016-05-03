@@ -56,9 +56,9 @@ Take a look at the [documentation table of contents](doc/TOC.md).
 The code is available under the [MIT license](LICENSE.md).
 
 ## TODO
-[] - debugging (jasmine-debug or karma)
-[] - coverage
-[] - release (changelog, bump,...)
-[] - lint rules
-[] - typings
-[] - allow fixup! in changelog
+* [ ] debugging (jasmine-debug or karma)
+* [ ] coverage
+* [ ] release (changelog, bump,...)
+* [ ] lint rules
+* [ ] typings
+* [ ] allow fixup! in changelog
