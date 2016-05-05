@@ -15,16 +15,20 @@
   },
   "scripts": {
     "build": "tsc",
-    "build:watch": "tsc -w",
     "clean": "npm cache clean && rimraf -- node_modules typings coverage dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "commitmsg": "conventional-changelog-lint -e",
+    "coverage": "istanbul cover jasmine",
+    "inspect": "node-inspector",
     "lint": "tslint 'src/**/*.ts' 'spec/**/*.ts'",
+    "postcoverage": "remap-istanbul -i coverage/coverage.json -o coverage -t html",
     "postinstall": "npm run typings install",
-    "precommit": "npm run test",
+    "precommit": "npm run lint && npm run test",
+    "precoverage": "npm run build",
     "pretest": "npm run build",
-    "test": "npm run lint && istanbul cover jasmine",
-    "posttest": "remap-istanbul -i coverage/coverage.json -o coverage -t html",
+    "test": "jasmine",
+    "test:debug": "node debug ./node_modules/.bin/jasmine",
+    "test:watch": "chokidar '**/*.ts' -c 'npm run test'",
     "typings": "typings"
   },
   "dependencies": {
@@ -34,6 +38,7 @@
     "rxjs": "latest"
   },
   "devDependencies": {
+    "chokidar-cli": "latest",
     "conventional-changelog-cli": "latest",
     "conventional-changelog-lint": "latest",
     "husky": "latest",
@@ -43,6 +48,7 @@
     "karma": "latest",
     "karma-jasmine": "latest",
     "karma-typescript-preprocessor": "latest",
+    "node-inspector": "^0.12.8",
     "remap-istanbul": "latest",
     "rimraf": "latest",
     "ts-helpers": "latest",
