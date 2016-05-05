@@ -38,14 +38,21 @@ var starter = require('starter-package-ts');
 npm run test
 ```
 
+## Watch
+
+```sh
+npm run test:watch
+```
+
 ## Debug
 
 use debugger; in your code then :
 ```sh
 npm run inspect # in a new tab
-npm test -- debug
+npm run test:debug
 ```
 then open [node-inspector](http://127.0.0.1:8080/debug?port=5858)
+and handle test using debug cli
 
 ## Documentation
 
@@ -56,9 +63,12 @@ Take a look at the [documentation table of contents](doc/TOC.md).
 The code is available under the [MIT license](LICENSE.md).
 
 ## TODO
-* [ ] debugging (jasmine-debug or karma)
-* [ ] coverage
-* [ ] release (changelog, bump,...)
+* [x] debugging
+* [x] coverage
+* [x] watching
 * [ ] lint rules
 * [ ] typings
+* [ ] clean dependencies
+* [ ] release (changelog, bump,...)
 * [ ] allow fixup! in changelog
+
