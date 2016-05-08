@@ -66,8 +66,8 @@ The code is available under the [MIT license](LICENSE.md).
 * [x] debugging
 * [x] coverage
 * [x] watching
-* [ ] lint rules
-* [ ] typings
+* [x] lint rules
+* [ ] write typings ?
 * [ ] clean dependencies
 * [ ] release (changelog, bump,...)
 * [ ] allow fixup! in changelog
