@@ -1,6 +1,6 @@
 {
   "rules": {
-    "member-access": false,
+    "member-access": true,
     "member-ordering": [
       true,
       "public-before-private",
@@ -11,7 +11,13 @@
     "no-inferrable-types": false,
     "no-internal-module": true,
     "no-var-requires": false,
-    "typedef": false,
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "property-declaration",
+      "member-variable-declaration"
+    ],
     "typedef-whitespace": [
       true,
       {
@@ -22,11 +28,11 @@
         "variable-declaration": "nospace"
       },
       {
-        "call-signature": "space",
-        "index-signature": "space",
-        "parameter": "space",
-        "property-declaration": "space",
-        "variable-declaration": "space"
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "onespace",
+        "variable-declaration": "onespace"
       }
     ],
 
@@ -115,7 +121,6 @@
       "single",
       "avoid-escape"
     ],
-    "semicolon": [true, "always"],
     "variable-name": [
       true,
       "check-format",
@@ -130,6 +135,5 @@
       "check-separator",
       "check-type"
     ]
-
   }
 }
