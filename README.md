@@ -28,24 +28,26 @@ npm install git://github.com/romainprignon/starter-package-ts.git --save
 
 ## Usage
 
+### Develop
+
 ```js
 var starter = require('starter-package-ts');
 ...
 ```
 
-## Test
+### Test
 
 ```sh
 npm run test
 ```
 
-## Watch
+### Watch
 
 ```sh
 npm run test:watch
 ```
 
-## Debug
+### Debug
 
 use debugger; in your code then :
 ```sh
@@ -55,15 +57,15 @@ npm run test:debug
 then open [node-inspector](http://127.0.0.1:8080/debug?port=5858)
 and handle test using debug cli
 
-## Documentation
+### Documentation
 
 Take a look at the [documentation table of contents](doc/TOC.md).
 
-## License
+### License
 
 The code is available under the [MIT license](LICENSE.md).
 
-## TODO
+## Todo
 * [x] debugging
 * [x] coverage
 * [x] watching
