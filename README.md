@@ -10,7 +10,8 @@ cd starter-package-ts
 ```
 
 * rename all occurence of 'starter-package-ts' in 'README' and 'package.json'
-* remove fiels 'src/' and 'test/' directories
+* remove files from 'src/' and 'test/' directories
+* remove 'main.*' files
 
 ```sh
 rm -rf .git
@@ -67,7 +68,7 @@ The code is available under the [MIT license](LICENSE.md).
 * [x] coverage
 * [x] watching
 * [x] lint rules
-* [ ] write typings ?
+* [x] export typings
 * [ ] clean dependencies
 * [ ] release (changelog, bump,...)
 * [ ] allow fixup! in changelog

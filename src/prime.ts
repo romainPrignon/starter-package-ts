@@ -1,14 +1,14 @@
 import 'ts-helpers'
 
-interface PrimeInterface {
+export interface PrimeInterface {
   isPrime(n: number): boolean
 }
 
-interface PrimeInterfaceExtended extends PrimeInterface {
+export interface PrimeInterfaceExtended extends PrimeInterface {
   primeFactors(n: number): Array<number>
 }
 
-class PrimeService implements PrimeInterface {
+export class PrimeService implements PrimeInterface {
   protected divisor: number
 
   constructor(divisor: number = 2) {
@@ -30,7 +30,7 @@ class PrimeService implements PrimeInterface {
   }
 }
 
-class PrimeServiceExtended extends PrimeService implements PrimeInterfaceExtended {
+export class PrimeServiceExtended extends PrimeService implements PrimeInterfaceExtended {
   constructor(divisor: number = 2) {
     super(divisor)
   }

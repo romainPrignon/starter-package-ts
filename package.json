@@ -14,7 +14,7 @@
     "npm": ">= 2.x"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -d",
     "clean": "npm cache clean && rimraf -- node_modules typings coverage dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "commitmsg": "conventional-changelog-lint -e",
