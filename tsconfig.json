@@ -10,7 +10,9 @@
     "removeComments": false
   },
   "exclude": [
+    "dist",
     "node_modules",
+    "main.ts", // we include it only for testing purpose
     "typings/browser.d.ts",
     "typings/browser"
   ],
