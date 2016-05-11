@@ -35,7 +35,8 @@
     "config": "latest",
     "core.js": "latest",
     "immutable": "latest",
-    "rxjs": "latest"
+    "rxjs": "latest",
+    "starter-package-ts": "git://github.com/romainprignon/starter-package-ts.git#bootstrap"
   },
   "devDependencies": {
     "chokidar-cli": "latest",
