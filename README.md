@@ -71,7 +71,7 @@ The code is available under the [MIT license](LICENSE.md).
 * [x] watching
 * [x] lint rules
 * [x] export typings
-* [ ] clean dependencies
+* [x] clean dependencies
 * [ ] release (changelog, bump,...)
 * [ ] allow fixup! in changelog
 
