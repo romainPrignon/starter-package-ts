@@ -10,10 +10,12 @@
     "suppressImplicitAnyIndexErrors": true,
     "removeComments": false
   },
-  "files": [
-    "src/prime.ts",
-    "typings/main.d.ts",
-    "typings/main"
+  "exclude": [
+    "dist",
+    "node_modules",
+    "main.ts",
+    "typings/browser.d.ts",
+    "typings/browser"
   ],
   "compileOnSave": false,
   "buildOnSave": false,

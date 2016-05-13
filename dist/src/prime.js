@@ -1,6 +1,5 @@
 "use strict";
 require('ts-helpers');
-var prime_1 = require('../node_modules/starter-package-ts/src/prime');
 var PrimeService = (function () {
     function PrimeService(divisor) {
         if (divisor === void 0) { divisor = 2; }
@@ -27,15 +26,6 @@ var PrimeServiceExtended = (function (_super) {
         if (divisor === void 0) { divisor = 2; }
         _super.call(this, divisor);
     }
-    /**
-     * Inception: use the isPrime function from self required package
-     * @param {Number} n
-     *
-     * @return {Boolean}
-     */
-    PrimeServiceExtended.prototype.isPrimeInception = function (n) {
-        return new prime_1.default().isPrime(n);
-    };
     PrimeServiceExtended.prototype.primeFactors = function (n) {
         var factors = [];
         var currentDivisor = this.divisor;

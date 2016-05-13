@@ -12,13 +12,6 @@ export declare class PrimeService implements PrimeInterface {
 }
 export declare class PrimeServiceExtended extends PrimeService implements PrimeInterfaceExtended {
     constructor(divisor?: number);
-    /**
-     * Inception: use the isPrime function from self required package
-     * @param {Number} n
-     *
-     * @return {Boolean}
-     */
-    isPrimeInception(n: number): boolean;
     primeFactors(n: number): Array<number>;
 }
 export default PrimeServiceExtended;
