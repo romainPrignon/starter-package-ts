@@ -8,13 +8,14 @@
     "type": "git",
     "url": "git+https://github.com/romainPrignon/starter-package-ts.git"
   },
-  "main": "main.js",
+  "main": "dist/src/prime.js",
+  "typings": "dist/src/prime.d.ts",
   "engines": {
     "node": ">=4.x",
     "npm": ">= 2.x"
   },
   "scripts": {
-    "build": "tsc -d",
+    "build": "tsc",
     "clean": "npm cache clean && rimraf -- node_modules typings coverage dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "commitmsg": "conventional-changelog-lint -e",

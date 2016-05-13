@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "target": "es5",
     "module": "commonjs",
     "outDir": "dist",
@@ -9,12 +10,10 @@
     "suppressImplicitAnyIndexErrors": true,
     "removeComments": false
   },
-  "exclude": [
-    "dist",
-    "node_modules",
-    "main.ts", // we include it only for testing purpose
-    "typings/browser.d.ts",
-    "typings/browser"
+  "files": [
+    "src/prime.ts",
+    "typings/main.d.ts",
+    "typings/main"
   ],
   "compileOnSave": false,
   "buildOnSave": false,
