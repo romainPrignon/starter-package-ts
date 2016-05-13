@@ -57,6 +57,14 @@ npm run test:debug
 then open [node-inspector](http://127.0.0.1:8080/debug?port=5858)
 and handle test using debug cli
 
+### Release
+
+```sh
+npm run release
+npm run release -- minor # can be patch, minor, major
+```
+see release-it package for more infos
+
 ### Documentation
 
 Take a look at the [documentation table of contents](doc/TOC.md).
@@ -72,4 +80,5 @@ The code is available under the [MIT license](LICENSE.md).
 * [x] lint rules
 * [x] export typings
 * [x] clean dependencies
-* [ ] release (changelog, bump,...)
+* [x] release (changelog, bump, build, coverage)
+* [ ] release dans une branche dédiée (optionnel)
