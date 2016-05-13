@@ -1,5 +1,5 @@
 {
-    "non-interactive": false,
+    "non-interactive": true,
     "dry-run": false,
     "verbose": true,
     "force": false,
@@ -9,7 +9,7 @@
     "commitMessage": "chore: build release %s",
     "tagName": "%s",
     "tagAnnotation": "build release %s",
-    "buildCommand": "npm run clean && npm install && npm run coverage && npm run changelog",
+    "buildCommand": "npm run clean && npm install && npm run build && npm run changelog",
     "changelogCommand": "",
     "requireCleanWorkingDir": false,
     "src": {
