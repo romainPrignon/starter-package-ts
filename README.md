@@ -73,5 +73,3 @@ The code is available under the [MIT license](LICENSE.md).
 * [x] export typings
 * [x] clean dependencies
 * [ ] release (changelog, bump,...)
-* [ ] allow fixup! in changelog
-
