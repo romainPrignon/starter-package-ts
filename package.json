@@ -18,7 +18,7 @@
     "build": "tsc",
     "clean": "npm cache clean && rimraf -- node_modules typings coverage dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "commitmsg": "conventional-changelog-lint -e",
+    "changelog:lint": "conventional-changelog-lint -f || true",
     "coverage": "istanbul cover jasmine",
     "inspect": "node-inspector",
     "lint": "tslint 'src/**/*.ts' 'spec/**/*.ts'",
