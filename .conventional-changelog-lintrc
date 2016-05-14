@@ -8,7 +8,7 @@
       "(Merge|merge).*"
     ],
     "release": [
-      "/^\\d.\\d.\\d|v\\d.\\d.\\d$/"
+      "\\d.\\d.\\d|v\\d.\\d.\\d"
     ],
     "revert": [
       "/^revert: (.*)/"
