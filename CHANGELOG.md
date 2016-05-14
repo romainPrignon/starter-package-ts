@@ -1,5 +1,15 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/romainPrignon/starter-package-ts/compare/1.1.0...v1.1.1) (2016-05-14)
+
+
+### Bug Fixes
+
+* wildcard release in changelog linter ([cc7145a](https://github.com/romainPrignon/starter-package-ts/commit/cc7145a))
+
+
+
 <a name="1.1.0"></a>
-# 1.1.0 (2016-05-14)
+# [1.1.0](https://github.com/romainPrignon/starter-package-ts/compare/9a01b56...1.1.0) (2016-05-14)
 
 
 ### Features
