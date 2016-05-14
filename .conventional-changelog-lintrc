@@ -1,0 +1,17 @@
+{
+  "extends": ["angular"],
+  "wildcards": {
+    "initial": [
+      "Initial commit"
+    ],
+    "merge": [
+      "(Merge|merge).*"
+    ],
+    "release": [
+      "/^\\d.\\d.\\d|v\\d.\\d.\\d$/"
+    ],
+    "revert": [
+      "/^revert: (.*)/"
+    ]
+  }
+}

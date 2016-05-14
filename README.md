@@ -1,8 +1,8 @@
 # starter-package-ts
 
-starter for node module written in typescript
+Starter for node module written in typescript
 
-## using this repository as a starting point
+## Using this repository as a starting point
 
 ```sh
 git clone https://github.com/romainprignon/starter-package-ts.git
@@ -81,4 +81,4 @@ The code is available under the [MIT license](LICENSE.md).
 * [x] export typings
 * [x] clean dependencies
 * [x] release (changelog, bump, build, coverage)
-* [ ] release dans une branche dédiée (optionnel)
+* [ ] github release (optionnal)

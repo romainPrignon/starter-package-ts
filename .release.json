@@ -6,9 +6,9 @@
     "pkgFiles": ["package.json"],
     "increment": "patch",
     "prereleaseId": null,
-    "commitMessage": "chore: build release %s",
+    "commitMessage": "%s",
     "tagName": "%s",
-    "tagAnnotation": "build release %s",
+    "tagAnnotation": "%s",
     "buildCommand": "npm run clean && npm install && npm run build && npm run changelog",
     "changelogCommand": "",
     "requireCleanWorkingDir": false,
@@ -36,7 +36,7 @@
     },
     "github": {
         "release": false,
-        "releaseName": "Release %s",
+        "releaseName": "%s",
         "tokenRef": "GITHUB_TOKEN"
     }
 }
