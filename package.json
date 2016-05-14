@@ -1,0 +1,58 @@
+{
+  "name": "starter-package-ts",
+  "version": "1.0.2",
+  "description": "module description",
+  "author": "Romain Prignon <pro.rprignon@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romainPrignon/starter-package-ts.git"
+  },
+  "main": "dist/src/prime.js",
+  "typings": "dist/src/prime.d.ts",
+  "engines": {
+    "node": ">=4.x",
+    "npm": ">= 2.x"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "npm cache clean && rimraf -- node_modules typings coverage dist",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "changelog:lint": "conventional-changelog-lint -f || true",
+    "coverage": "istanbul cover jasmine",
+    "inspect": "node-inspector",
+    "lint": "tslint 'src/**/*.ts' 'spec/**/*.ts'",
+    "postcoverage": "remap-istanbul -i coverage/coverage.json -o coverage -t html",
+    "postinstall": "npm run typings install",
+    "precommit": "npm run lint && npm run test",
+    "precoverage": "npm run build",
+    "pretest": "npm run build",
+    "release": "release-it",
+    "test": "jasmine",
+    "test:debug": "node debug ./node_modules/.bin/jasmine",
+    "test:watch": "chokidar '**/*.ts' -c 'npm run test'",
+    "typings": "typings"
+  },
+  "dependencies": {
+    "config": "latest",
+    "core.js": "latest",
+    "immutable": "latest",
+    "rxjs": "latest"
+  },
+  "devDependencies": {
+    "chokidar-cli": "latest",
+    "conventional-changelog-cli": "latest",
+    "conventional-changelog-lint": "latest",
+    "husky": "latest",
+    "istanbul": "latest",
+    "jasmine": "latest",
+    "node-inspector": "latest",
+    "release-it": "latest",
+    "remap-istanbul": "latest",
+    "rimraf": "latest",
+    "ts-helpers": "latest",
+    "tslint": "latest",
+    "typescript": "latest",
+    "typings": "latest"
+  }
+}
