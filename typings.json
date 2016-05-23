@@ -4,7 +4,7 @@
   "devDependencies": {
 
   },
-  "ambientDependencies": {
+  "globalDependencies": {
     "core-js": "registry:dt/core-js",
     "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts",
     "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts"
