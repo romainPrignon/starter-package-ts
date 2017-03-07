@@ -28,6 +28,10 @@ export class PrimeService implements PrimeInterface {
 
     return true
   }
+
+  public isNotPrime(n: Number): Boolean {
+    return this.isPrime(n)
+  }
 }
 
 export class PrimeServiceExtended extends PrimeService implements PrimeInterfaceExtended {
