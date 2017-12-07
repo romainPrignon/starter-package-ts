@@ -1,11 +1,6 @@
 .idea/
 node_modules/
 coverage/
-
 .DS_STORE
 npm-debug.log
-
-# Typing #
-/src/typings/tsd/
-/typings/
-/tsd_typings/
+.env

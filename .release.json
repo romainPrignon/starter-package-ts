@@ -1,42 +1,11 @@
+// https://github.com/webpro/release-it/blob/master/conf/release-it.json
 {
     "non-interactive": true,
-    "dry-run": false,
+    "dry-run": true,
     "verbose": true,
-    "force": false,
-    "pkgFiles": ["package.json"],
     "increment": "patch",
-    "prereleaseId": null,
-    "commitMessage": "%s",
-    "tagName": "%s",
-    "tagAnnotation": "%s",
-    "buildCommand": "npm run clean && npm install && npm run build && npm run changelog",
-    "changelogCommand": "",
-    "requireCleanWorkingDir": false,
-    "src": {
-        "pushRepo": null,
-        "beforeStartCommand": false,
-        "beforeStageCommand": false,
-        "afterReleaseCommand": false
-    },
-    "dist": {
-        "repo": false,
-        "stageDir": ".stage",
-        "baseDir": "dist",
-        "files": ["**/*"],
-        "pkgFiles": null,
-        "beforeStageCommand": false,
-        "afterReleaseCommand": false
-    },
+    "buildCommand": "npm run build",
     "npm": {
-        "publish": false,
-        "publishPath": ".",
-        "tag": "latest",
-        "private": false,
-        "forcePublishSourceRepo": false
-    },
-    "github": {
-        "release": false,
-        "releaseName": "%s",
-        "tokenRef": "GITHUB_TOKEN"
+        "publish": false
     }
 }

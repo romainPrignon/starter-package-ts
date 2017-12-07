@@ -1,4 +1,3 @@
-import 'ts-helpers';
 export interface PrimeInterface {
     isPrime(n: number): boolean;
 }
@@ -9,6 +8,7 @@ export declare class PrimeService implements PrimeInterface {
     protected divisor: number;
     constructor(divisor?: number);
     isPrime(n: number): boolean;
+    isPrimeAsync: (n: number) => Promise<boolean>;
 }
 export declare class PrimeServiceExtended extends PrimeService implements PrimeInterfaceExtended {
     constructor(divisor?: number);
