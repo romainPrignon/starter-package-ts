@@ -1,6 +1,12 @@
+mettre en funcional programming
+revoir debug
+release propre sur git
+revoir release doc et readme
+test generator, faker,...
+
 # starter-package-ts
 
-Starter for node module written in typescript
+Starter for a node package written in typescript
 
 ## Using this repository as a starting point
 
@@ -9,9 +15,8 @@ git clone https://github.com/romainprignon/starter-package-ts.git
 cd starter-package-ts
 ```
 
-* rename all occurence of 'starter-package-ts' in 'README' and 'package.json'
+* rename all occurence of 'starter-package-ts' in project
 * remove files from 'src/' and 'test/' directories
-* remove 'main.*' files
 
 ```sh
 rm -rf .git
@@ -23,35 +28,17 @@ npm install
 ## Installation
 
 ```sh
-npm install git://github.com/romainprignon/starter-package-ts.git --save
+npm install --save git://github.com/romainprignon/starter-package-ts.git
 ```
 
 ## Usage
-
-### Develop
-
-```js
-var starter = require('starter-package-ts');
-...
-```
-
-### Test
-
-```sh
-npm run test
-```
-
-### Watch
-
-```sh
-npm run test:watch
-```
+See `package.json` for a list of command that you can use
 
 ### Debug
 
 use debugger; in your code then :
 ```sh
-npm run inspect # in a new tab
+
 npm run test:debug
 ```
 then open [node-inspector](http://127.0.0.1:8080/debug?port=5858)
@@ -65,20 +52,6 @@ npm run release -- minor # can be patch, minor, major
 ```
 see release-it package for more infos
 
-### Documentation
-
-Take a look at the [documentation table of contents](doc/TOC.md).
-
 ### License
 
 The code is available under the [MIT license](LICENSE.md).
-
-## Todo
-* [x] debugging
-* [x] coverage
-* [x] watching
-* [x] lint rules
-* [x] export typings
-* [x] clean dependencies
-* [x] release (changelog, bump, build, coverage)
-* [ ] github release (optionnal)

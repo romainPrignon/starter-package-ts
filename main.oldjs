@@ -1,9 +1,0 @@
-/**
- * Plain old javascript test file.
- * We use it to test our compiled module
- */
-
-var primeModule = require('./dist/src/prime')
-var primeService = new primeModule.PrimeService()
-
-console.log(primeService.isPrime(4)) // false

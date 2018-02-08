@@ -1,25 +1,23 @@
 {
   "compilerOptions": {
-    "declaration": true,
     "target": "es2017",
-    "module": "commonjs",
+    "module": "es6",
     "outDir": "dist",
+    "declaration": true,
     "sourceMap": true,
     "noEmitHelpers": true,
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "removeComments": false
+    "removeComments": false,
+    "strict": true,
+//    "suppressImplicitAnyIndexErrors": false,
+    "lib": [
+      "es2017"
+    ]
   },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
     "dist",
-    "node_modules",
-    "main.ts",
-    "spec",
-    "typings"
-  ],
-  "compileOnSave": false,
-  "buildOnSave": false,
-  "atom": {
-    "rewriteTsconfig": false
-  }
+    "node_modules"
+  ]
 }

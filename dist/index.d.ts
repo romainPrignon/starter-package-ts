@@ -1,17 +1,2 @@
-export interface PrimeInterface {
-    isPrime(n: number): boolean;
-}
-export interface PrimeInterfaceExtended extends PrimeInterface {
-    primeFactors(n: number): Array<number>;
-}
-export declare class PrimeService implements PrimeInterface {
-    protected divisor: number;
-    constructor(divisor?: number);
-    isPrime(n: number): boolean;
-    isPrimeAsync: (n: number) => Promise<boolean>;
-}
-export declare class PrimeServiceExtended extends PrimeService implements PrimeInterfaceExtended {
-    constructor(divisor?: number);
-    primeFactors(n: number): Array<number>;
-}
-export default PrimeServiceExtended;
+export { sortUserByAge, addUsersAgeCategory } from './user/user';
+export { computeOrderSumAsync, computeOrderSumObservable } from './order/order';
