@@ -1,6 +1,6 @@
 {
   "name": "starter-package-ts",
-  "version": "1.2.1",
+  "version": "1.4.0",
   "description": "module description",
   "author": "Romain Prignon <pro.rprignon@gmail.com>",
   "license": "MIT",
@@ -23,7 +23,6 @@
     "release": "release-it",
     "test": "jest",
     "test:coverage": "npm run test -- --coverage",
-    "test:debug": "node inspect npm run test",
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
