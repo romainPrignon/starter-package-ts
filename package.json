@@ -23,7 +23,6 @@
     "release": "release-it",
     "test": "jest",
     "test:coverage": "npm run test -- --coverage",
-    "test:debug": "node inspect npm run test",
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
