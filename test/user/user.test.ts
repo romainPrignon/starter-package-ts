@@ -1,4 +1,9 @@
-import { addUsersAgeCategory, sortUserByAge } from '../../src/user/user'
+import {
+  addUsersAgeCategory,
+  sortUserByAge,
+  getUserOrderTotalPriceAsync,
+  getUserOrderTotalPriceObservable
+} from '../../src/user/user'
 
 describe('User', () => {
   describe('sortUserByAge', () => {
@@ -103,7 +108,57 @@ describe('User', () => {
         }
       ]
 
-      expect(expectedOutput).toEqual(output)
+      expect(output).toEqual(expectedOutput)
+    })
+  })
+
+  describe('getUserOrderTotalPriceAsync', () => {
+    it('should return the total price of a user\'s orders', async () => {
+      // given
+      const user = {
+        name: 'Elizabeth',
+        age: 56,
+        hair: 'black',
+        orders: [
+          { name: 'ham', price: 2, quantity: 2 },
+          { name: 'bread', price: 1, quantity: 3 },
+          { name: 'apples', price: 2, quantity: 3 }
+        ],
+        category: 'old'
+      }
+
+      // when
+      const output = await getUserOrderTotalPriceAsync(user)
+
+      // then
+      const expectedOutput = 5
+
+      expect(output).toEqual(expectedOutput)
+    })
+  })
+
+  describe('getUserOrderTotalPriceObservable', () => {
+    it('should return the total price of a user\'s orders', async () => {
+      // given
+      const user = {
+        name: 'Elizabeth',
+        age: 56,
+        hair: 'black',
+        orders: [
+          { name: 'ham', price: 2, quantity: 2 },
+          { name: 'bread', price: 1, quantity: 3 },
+          { name: 'apples', price: 2, quantity: 3 }
+        ],
+        category: 'old'
+      }
+
+      // when
+      const output = await getUserOrderTotalPriceObservable(user)
+
+      // then
+      const expectedOutput = 5
+
+      expect(output).toEqual(expectedOutput)
     })
   })
 })

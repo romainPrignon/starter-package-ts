@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+    "target": "es2017",
+    "module": "es6",
+    "moduleResolution": "node",
     "strict": true
   },
-  "lib": [
-    "es2017"
-  ],
   "include": [
-    "**/*"
+    "src/**/*",
+    "test/**/*"
   ]
 }
