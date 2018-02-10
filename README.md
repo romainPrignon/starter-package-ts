@@ -1,9 +1,3 @@
-mettre en funcional programming
-revoir debug
-release propre sur git
-revoir release doc et readme
-test generator, faker,...
-
 # starter-package-ts
 
 Starter for a node package written in typescript
@@ -33,16 +27,6 @@ npm install --save git://github.com/romainprignon/starter-package-ts.git
 
 ## Usage
 See `package.json` for a list of command that you can use
-
-### Debug
-
-use debugger; in your code then :
-```sh
-
-npm run test:debug
-```
-then open [node-inspector](http://127.0.0.1:8080/debug?port=5858)
-and handle test using debug cli
 
 ### Release
 
