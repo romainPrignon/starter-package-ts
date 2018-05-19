@@ -9,7 +9,7 @@
     "url": "git+https://github.com/romainPrignon/starter-package-ts.git"
   },
   "main": "dist/index.js",
-  "types": "type/index.d.ts",
+  "types": "dist/type/index.d.ts",
   "engines": {
     "node": "^8.0.0",
     "npm": "^5.3.0"

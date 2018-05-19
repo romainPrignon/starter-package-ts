@@ -1,8 +1,8 @@
 export {
   sortUserByAge,
   addUsersAgeCategory,
-  getUserOrderTotalPriceObservable,
+  // getUserOrderTotalPriceObservable,
   getUserOrderTotalPriceAsync
 } from './user/user'
 
-export { computeOrderSumAsync, computeOrderSumObservable } from './order/order'
+// export { computeOrderSumAsync, computeOrderSumObservable } from './order/order'
