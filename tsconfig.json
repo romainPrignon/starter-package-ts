@@ -1,17 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "es6",
+    "target": "es2018",
+    "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "dist",
     "declaration": true,
     "sourceMap": true,
-    "noEmitHelpers": true,
-    "removeComments": false,
-    "strict": true
-//    "suppressImplicitAnyIndexErrors": false,
+    "esModuleInterop": true,
+    "strict": true,
+    "lib": [
+      "es2018"
+    ]
   },
   "include": [
-    "src/**/*"
+    "**/src/*",
+    "**/type/*"
   ]
 }

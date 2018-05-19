@@ -1,9 +1,14 @@
-import * as _ from 'lodash';
-import { computeOrderSumAsync } from '../order/order';
-export const sortUserByAge = (users) => _(users)
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const lodash_1 = __importDefault(require("lodash"));
+const order_1 = require("../order/order");
+exports.sortUserByAge = (users) => lodash_1.default(users)
     .sortBy((user) => user.age)
     .value();
-export const getUserOrderTotalPriceAsync = async (user) => computeOrderSumAsync(user.orders);
+exports.getUserOrderTotalPriceAsync = async (user) => order_1.computeOrderSumAsync(user.orders);
 // export const getUserOrderTotalPriceObservable = async (user: User): Promise<number> =>
 //   new Promise<number>((resolve) =>
 //     computeOrderSumObservable(user.orders)
@@ -11,6 +16,6 @@ export const getUserOrderTotalPriceAsync = async (user) => computeOrderSumAsync(
 //         ((value: number) => resolve(value))
 //       )
 //   )
-export const addUsersAgeCategory = (users) => users
+exports.addUsersAgeCategory = (users) => users
     .map((user) => (Object.assign({}, user, { category: user.age < 50 ? 'young' : 'old' })));
 //# sourceMappingURL=user.js.map
