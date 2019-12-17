@@ -9,63 +9,43 @@
     "url": "git+https://github.com/romainPrignon/starter-package-ts.git"
   },
   "main": "dist/index.js",
-  "types": "dist/type/index.d.ts",
+  "types": "dist/index.d.ts",
   "engines": {
-    "node": "^10.0.0",
-    "npm": "^6.4.0"
+    "node": "^12.0",
+    "npm": "^6.12"
   },
+  "files": [
+    "dist",
+    "type",
+    "LICENSE",
+    "package-lock.json",
+    "package.json",
+    "README.md"
+  ],
   "scripts": {
-    "build": "rm -rf dist/ && tsc",
-    "build:dev": "tsc --noEmit --pretty",
-    "lint": "npm run lint:src && npm run lint:test",
-    "lint:src": "tslint --project tsconfig.json",
-    "lint:test": "tslint --project test/tsconfig.json",
-    "release": "release-it",
-    "test": "jest",
+    "lint": "eslint",
+    "compile": "rm -rf dist/ && tsc",
+    "test": "undefined",
     "test:coverage": "npm run test -- --coverage",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "version:patch": "npm version patch -m ':bookmark: Release v%s'",
+    "version:minor": "npm version minor -m ':bookmark: Release v%s'",
+    "version:major": "npm version major -m ':bookmark: Release v%s'",
+    "postversion": "git push --follow-tags",
+    "prepublish": "npm run compile"
   },
   "dependencies": {
-    "lodash": "latest",
-    "rxjs": "latest"
+    "lodash": "latest"
   },
   "devDependencies": {
     "@types/lodash": "latest",
+    "@types/node": "^12.0",
     "husky": "latest",
-    "jest": "latest",
-    "release-it": "latest",
-    "ts-jest": "latest",
-    "tslint": "latest",
-    "tslint-config-standard": "latest",
     "typescript": "latest"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run build:dev && npm run test"
-    }
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "testMatch": [
-      "**/test/**/*.(ts|js)"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest"
-    },
-    "coverageReporters": [
-      "text"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "functions": 100
-      }
+      "pre-commit": "npm run lint && npm run test:coverage"
     }
   }
 }

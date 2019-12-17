@@ -1,6 +1,7 @@
 # starter-package-ts
 
-Starter for a node package written in typescript
+> Starter for a node package written in typescript
+
 
 ## Using this repository as a starting point
 
@@ -19,23 +20,34 @@ git remote add origin <repo_url>
 npm install
 ```
 
-## Installation
+
+## Setup
 
 ```sh
-npm install --save git://github.com/romainprignon/starter-package-ts.git
+npm install --save starter-package-ts
 ```
+
 
 ## Usage
-See `package.json` for a list of command that you can use
 
-### Release
+See [package.json](package.json) scripts section
+
+
+## API
+
+See [dist/index.d.ts](dist/index.d.ts)
+
+
+## Release
+
+Example: Releasing a minor version following semver
 
 ```sh
-npm run release
-npm run release -- minor # can be patch, minor, major
+npm run version:minor
+npm run publish
 ```
-see release-it package for more infos
 
-### License
+
+## License
 
 The code is available under the [MIT license](LICENSE.md).
