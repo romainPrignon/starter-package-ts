@@ -12,6 +12,7 @@ cd starter-package-ts
 
 * rename all occurence of 'starter-package-ts' in project
 * remove files from 'src/' and 'test/' directories
+* edit all `EDIT_ME` code at your convenience
 
 ```sh
 rm -rf .git
