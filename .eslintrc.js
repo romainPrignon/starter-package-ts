@@ -6,7 +6,8 @@ module.exports = {
     project: './tsconfig.json'
   },
   plugins: [
-    '@typescript-eslint'
+    '@typescript-eslint',
+    '@typescript-eslint/tslint'
   ],
   env: {
     es2020: true,
@@ -18,6 +19,10 @@ module.exports = {
   ],
   rules: {
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'error'
+    '@typescript-eslint/no-unused-vars': 'error',
+
+    '@typescript-eslint/tslint/config': ['error', {
+      "lintFile": './tslint.json',
+    }]
   }
 }

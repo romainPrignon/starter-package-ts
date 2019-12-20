@@ -32,7 +32,7 @@
     "version:minor": "npm version minor -m ':bookmark: Release v%s'",
     "version:major": "npm version major -m ':bookmark: Release v%s'",
     "postversion": "git push --follow-tags",
-    "prepublish": "npm run compile"
+    "prepare": "npm run compile"
   },
   "dependencies": {
     "lodash": "4"
@@ -41,6 +41,7 @@
     "@types/lodash": "4",
     "@types/node": "12",
     "@typescript-eslint/eslint-plugin": "2",
+    "@typescript-eslint/eslint-plugin-tslint": "2",
     "@typescript-eslint/parser": "2",
     "eslint": "6",
     "eslint-config-standard": "14",
@@ -49,6 +50,8 @@
     "eslint-plugin-promise": "4",
     "eslint-plugin-standard": "4",
     "husky": "3",
+    "tslint": "5",
+    "tslint-config-standard": "9",
     "typescript": "3.7.2"
   },
   "husky": {
