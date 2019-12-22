@@ -1,3 +1,19 @@
 {
-  "extends": "tslint-config-standard"
+  "extends": [
+    "tslint-config-standard",
+    "tslint-immutable"
+  ],
+  "rules": {
+    "no-var-keyword": true,
+    "no-let": true,
+    "no-delete": true,
+    "no-parameter-reassignment": true,
+    "typedef": [
+      true,
+      "call-signature"
+    ],
+    "no-array-mutation": true,
+    "no-object-mutation": true,
+    "no-method-signature": true
+  }
 }
