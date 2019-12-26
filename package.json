@@ -25,7 +25,7 @@
   "scripts": {
     "lint": "tslint --project tsconfig.json",
     "compile": "rm -rf dist/ && tsc",
-    "test": "undefined",
+    "test": "jest --detectOpenHandles --forceExit",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch",
     "version:patch": "npm version patch -m ':bookmark: Release v%s'",
@@ -39,9 +39,12 @@
     "lodash": "4"
   },
   "devDependencies": {
+    "@types/jest": "24",
     "@types/lodash": "4",
     "@types/node": "12",
     "husky": "3",
+    "jest": "24",
+    "ts-jest": "24",
     "tslint": "5",
     "tslint-config-standard": "9",
     "tslint-immutable": "6",
