@@ -35,8 +35,7 @@
     "prepare": "npm run compile"
   },
   "dependencies": {
-    "immer": "5",
-    "lodash": "4"
+    "immer": "5"
   },
   "devDependencies": {
     "@types/jest": "24",
