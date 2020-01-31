@@ -37,9 +37,9 @@
     "test:spec": "jest --detectOpenHandles --forceExit spec/",
     "test:spec:coverage": "npm run test:spec -- --coverage",
     "test:spec:watch": "npm run test:spec -- --watch",
-    "version:patch": "npm version patch -m '🔖 Release v%s'",
-    "version:minor": "npm version minor -m '🔖 Release v%s'",
-    "version:major": "npm version major -m '🔖 Release v%s'",
+    "version:patch": "HUSKY_SKIP_HOOKS=1 npm version patch -m '🔖 Release v%s'",
+    "version:minor": "HUSKY_SKIP_HOOKS=1 npm version minor -m '🔖 Release v%s'",
+    "version:major": "HUSKY_SKIP_HOOKS=1 npm version major -m '🔖 Release v%s'",
     "postversion": "git push --follow-tags",
     "prepublishOnly": "npm run compile"
   },
