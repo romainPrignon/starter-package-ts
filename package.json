@@ -23,6 +23,7 @@
     "README.md"
   ],
   "scripts": {
+    "postinstall": "gitmoji --init",
     "compile": "rm -rf dist/ && tsc -p src/",
     "lint": "npm run lint:src && npm run lint:spec && npm run lint:test",
     "lint:src": "tslint --project src/tsconfig.json",
@@ -41,7 +42,8 @@
     "version:minor": "HUSKY_SKIP_HOOKS=1 npm version minor -m '🔖 Release v%s'",
     "version:major": "HUSKY_SKIP_HOOKS=1 npm version major -m '🔖 Release v%s'",
     "postversion": "git push --follow-tags",
-    "prepublishOnly": "npm run compile"
+    "prepublishOnly": "pinst --disable && npm run compile",
+    "postpublish": "pinst --enable"
   },
   "dependencies": {
     "@sindresorhus/is": "2",
@@ -58,6 +60,7 @@
     "gitmoji-cli": "3",
     "husky": "3",
     "jest": "24",
+    "pinst": "2",
     "ts-jest": "24",
     "tslint": "5",
     "tslint-config-standard": "9",
