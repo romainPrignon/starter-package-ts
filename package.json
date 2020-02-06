@@ -17,6 +17,7 @@
   "files": [
     "dist",
     "type",
+    "CHANGELOG.md",
     "LICENSE.md",
     "package-lock.json",
     "package.json",
