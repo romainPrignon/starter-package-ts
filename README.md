@@ -10,9 +10,9 @@ git clone https://github.com/romainprignon/starter-package-ts.git
 cd starter-package-ts
 ```
 
-* rename all occurence of 'starter-package-ts' in project
-* remove files from 'src/' and 'test/' directories
-* edit all `EDIT_ME` code at your convenience
+* rename all occurence of `starter-package-ts` in `pacakge.json` and `README.md`
+* remove files from  `src` `test` `spec` `type` directories
+* edit all `EDIT_ME` annoted part
 
 ```sh
 rm -rf .git
