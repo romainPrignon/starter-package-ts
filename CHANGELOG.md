@@ -1,5 +1,14 @@
 # Changelog
 
+<a name="1.10.0"></a>
+## 1.10.0 (2020-02-06)
+
+### Fixed
+
+- 💚 prevent all hooks when releasing a new version [[c56e539](https://github.com/romainPrignon/starter-package-ts/commit/c56e539a72b1f0af655f057711ee148b927aa21a)]
+- 💚 add changelog [[5323fd5](https://github.com/romainPrignon/starter-package-ts/commit/5323fd502238d3fe82e07e216773671edb3a90e7)]
+
+
 <a name="1.9.0"></a>
 ## 1.9.0 (2020-01-31)
 
