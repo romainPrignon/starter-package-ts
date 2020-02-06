@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="1.10.1"></a>
+## 1.10.1 (2020-02-06)
+
+### Fixed
+
+- 💚 add CHANGELOG.md into package release [[e4ebcd7](https://github.com/romainPrignon/starter-package-ts/commit/e4ebcd757543705f4d73606b544cff33ee3655d5)]
+
+
 <a name="1.10.0"></a>
 ## 1.10.0 (2020-02-06)
 
