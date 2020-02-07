@@ -1,12 +1,14 @@
-const Num = (val: number) => ({
+const Num = (value?: any) => ({
   ...Number,
   isMultipleOf (divisor: number): boolean {
-    return val % divisor === 0
+    return Number(value) % divisor === 0
   }
 })
 
 // tslint:disable-next-line: no-object-mutation
-Num.of = (val: number) => Num(val)
+Num.from = (val: number) => Num(val)
 
 
-export default Num
+export {
+  Num
+}

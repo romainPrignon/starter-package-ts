@@ -1,6 +1,6 @@
 import { Immutable } from '../type'
 
-import Num from './utils/Num'
+import { Num } from './utils/Num'
 
 
 const naturalNumberGenerator = {
