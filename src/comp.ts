@@ -1,6 +1,5 @@
 import { Immutable } from 'immer'
-
-import { Num } from './utils/Num'
+import { Number } from '@romainprignon/utils/dist/native/numbers'
 
 
 const naturalNumberGenerator = {
@@ -13,7 +12,7 @@ const naturalNumberGenerator = {
 const sumOfMultiple3and5Until = (n: number): Immutable<number> =>
   naturalNumberGenerator
     .until(n)
-    .filter((val) => Num(val).isMultipleOf(5) || Num(val).isMultipleOf(3))
+    .filter((val) => new Number(val).isMultipleOf(5) || new Number(val).isMultipleOf(3))
     .reduce((acc = 0, val) => acc + val)
 
 
