@@ -1,4 +1,4 @@
-import { Immutable } from '../type'
+import { Immutable } from 'immer'
 
 import moment from 'moment'
 import { assert } from '@sindresorhus/is'

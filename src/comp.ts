@@ -1,4 +1,4 @@
-import { Immutable } from '../type'
+import { Immutable } from 'immer'
 
 import { Num } from './utils/Num'
 
