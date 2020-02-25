@@ -1,5 +1,5 @@
 import { Immutable } from 'immer'
-import { Number } from '@romainprignon/utils/dist/native/numbers'
+import { Number } from '@romainprignon/utils/native/numbers'
 
 
 const naturalNumberGenerator = {

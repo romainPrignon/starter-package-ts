@@ -49,7 +49,7 @@
     "postpublish": "pinst --enable"
   },
   "dependencies": {
-    "@romainprignon/utils": "0",
+    "@romainprignon/utils": "1",
     "@sindresorhus/is": "2",
     "highland": "2",
     "immer": "5",

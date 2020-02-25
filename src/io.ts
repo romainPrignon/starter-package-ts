@@ -1,6 +1,6 @@
 import path from 'path'
 import h from 'highland'
-import * as fs from '@romainprignon/utils/dist/native/fs'
+import * as fs from '@romainprignon/utils/native/fs'
 
 
 const readIndex = async (indexPath: string): Promise<string> =>
