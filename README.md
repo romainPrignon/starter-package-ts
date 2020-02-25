@@ -11,7 +11,7 @@ cd starter-package-ts
 ```
 
 * rename all occurence of `starter-package-ts` in `pacakge.json` and `README.md`
-* remove files from  `src` `test` `spec` `type` directories
+* remove files from  `src` `test` `type` directories
 * edit all `EDIT_ME` annoted part
 
 ```sh

@@ -13,7 +13,7 @@ const sumOfMultiple3and5Until = (n: number): Immutable<number> =>
   naturalNumberGenerator
     .until(n)
     .filter((val) => new Number(val).isMultipleOf(5) || new Number(val).isMultipleOf(3))
-    .reduce((acc = 0, val) => acc + val)
+    .reduce((acc, val) => acc + val)
 
 
 export {

@@ -3,7 +3,6 @@ module.exports = {
   testEnvironment: 'node',
   testMatch: [
     '**/test/**/*.test.ts',
-    '**/spec/**/*.spec.ts',
   ],
   coverageThreshold: {
     global: {
@@ -15,5 +14,6 @@ module.exports = {
   },
   collectCoverageFrom: [
     'src/**/*.{js,ts}',
+    '!src/index.ts'
   ]
 }
