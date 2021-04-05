@@ -29,7 +29,7 @@
     "lint": "npm run lint:src && npm run lint:test",
     "lint:src": "tslint --project src/tsconfig.json",
     "lint:test": "tslint --project test/tsconfig.json",
-    "test": "jest",
+    "test": "jest --maxWorkers=50%",
     "test:debug": "npm run test --detectOpenHandles --forceExit --runInBand --no-cache",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch",
