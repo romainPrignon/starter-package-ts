@@ -46,7 +46,7 @@
     "@romainprignon/utils": "1",
     "@sindresorhus/is": "2",
     "highland": "2",
-    "immer": "5",
+    "immer": "9",
     "make-error-cause": "2",
     "moment": "2",
     "runtypes": "4"
