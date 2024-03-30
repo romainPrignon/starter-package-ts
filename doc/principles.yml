@@ -1,0 +1,16 @@
+repo_name: starter-package-ts
+version: 2024
+principles:
+  - principle: package must be ESM ready
+
+  - principle: package must be design to work on every runtime
+    why:
+      - portability
+    how:
+      - xxx
+
+  - principle: xxx
+    why:
+      - xxx
+    how:
+      - xxx

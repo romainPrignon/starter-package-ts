@@ -1,21 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es2019", // node 12
-    "module": "commonjs",
-    "moduleResolution": "node",
     "outDir": "dist",
-    "declaration": true,
-    "sourceMap": true,
-    "removeComments": false,
+    "target": "ES2022", // node 18
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "moduleDetection": "force",
     "esModuleInterop": true,
+    "isolatedModules": true,
+    "sourceMap": true,
+    "declaration": true,
+    "skipLibCheck": true,
     "strict": true,
     "noImplicitReturns": true,
+    "noErrorTruncation": true,
+    "useUnknownInCatchVariables": false,
+    "strictPropertyInitialization": false,
     "lib": [
-      "es2020",
-      "dom" // EDIT_ME
+      "ES2022",
+      "DOM", // iterator and web assembly are in here
     ]
   },
   "include": [
-    "type/"
-  ]
+    "src/",
+    "types"
+  ],
 }

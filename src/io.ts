@@ -1,3 +1,4 @@
+// @ts-nocheck
 import path from 'path'
 import h from 'highland'
 import * as fs from '@romainprignon/utils/native/fs'

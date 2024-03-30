@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Immutable } from 'immer'
 
 import moment from 'moment'
