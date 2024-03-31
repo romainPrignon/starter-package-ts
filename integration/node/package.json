@@ -1,0 +1,10 @@
+{
+  "name": "node",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "starter-package-ts": "../../"
+  }
+}

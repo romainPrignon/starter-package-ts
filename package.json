@@ -9,8 +9,8 @@
     "url": "git+https://github.com/romainPrignon/starter-package-ts.git"
   },
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "engines": {
     "node": "20.x",
     "pnpm": "8.x"
@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "postinstall": "gitmoji --init",
-    "compile": "rm -rf dist/ && tsc --build",
+    "check": "rm -rf dist/ && tsc --build",
     "lint": "eslint --ext ts .",
     "fmt": "eslint --fix --ext ts .",
     "test": "vitest run",
@@ -39,7 +39,7 @@
     "version:minor": "npm version --no-commit-hooks minor -m '🔖 Release v%s'",
     "version:major": "npm version --no-commit-hooks major -m '🔖 Release v%s'",
     "postversion": "git push --follow-tags",
-    "prepublishOnly": "pinst --disable && npm run compile",
+    "prepublishOnly": "pinst --disable && npm run check",
     "postpublish": "pinst --enable"
   },
   "dependencies": {

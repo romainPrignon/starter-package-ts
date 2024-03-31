@@ -1,0 +1,21 @@
+{
+  "tasks": {
+    "dev": "deno run -A main.ts"
+  },
+  "imports": {
+    "starter-package-ts": "../../dist/src/fp/workflows/manga.workflow.js",
+    "@romainprignon/utils": "npm:@romainprignon/utils@3.1.3",
+    "@sinclair/typebox": "npm:@sinclair/typebox@^0.32.13",
+    "@sindresorhus/is": "npm:@sindresorhus/is@^6.1.0",
+    "awilix": "npm:awilix@^10.0.1",
+    "date-fns": "npm:date-fns@^3.3.1",
+    "debug": "npm:debug@^4.3.4",
+    "effector": "npm:effector@^23.2.0",
+    "immer": "npm:immer@^10.0.3",
+    "ix": "npm:ix@^5.0.0",
+    "ramda": "npm:ramda@^0.29.1",
+    "remeda": "npm:remeda@^1.47.0",
+    "ts-pattern": "npm:ts-pattern@^5.0.6",
+    "type-fest": "npm:type-fest@^4.10.1"
+  }
+}

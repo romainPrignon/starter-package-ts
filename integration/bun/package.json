@@ -1,0 +1,13 @@
+{
+  "name": "bun",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run index.ts"
+  },
+  "dependencies": {
+    "starter-package-ts": "../../"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

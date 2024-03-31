@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'node:fs'
 import { createEffect } from 'effector'
 import { Error } from '@romainprignon/utils/fp/errors/Error.js' // TODO rename to Err
 import { raise } from '../utils/raise.util.js'
