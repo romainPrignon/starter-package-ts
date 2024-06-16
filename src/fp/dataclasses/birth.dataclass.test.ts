@@ -3,12 +3,12 @@ import { birth } from './birth.dataclass.js'
 
 describe('birth dataclass', () => {
   describe('birth', () => {
-    test('it should return a valid birthdate', () => {
+    test('it should return a valid birthdate', async () => {
       // arrange
       const validDate = new Date('1970-01-01')
 
       // act
-      const res = birth(validDate)
+      const res = await birth(validDate)
 
       // assert
       expect(res).toEqual(validDate)
@@ -19,7 +19,8 @@ describe('birth dataclass', () => {
       const invalidDate = new Date('')
 
       // assert
-      expect(() => birth(invalidDate)).toThrowErrorMatchingInlineSnapshot('[Error: invalid birthdate Invalid Date]')
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
+      expect(async () => birth(invalidDate)).rejects.toMatchInlineSnapshot('[InvariantError: invalid birthdate Invalid Date]')
     })
   })
 })

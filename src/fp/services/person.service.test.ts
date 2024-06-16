@@ -4,7 +4,7 @@ import { fetchAllPerson } from './person.service.js'
 
 describe('person service', () => {
   describe('fetchAllPerson', () => {
-    test('it should return a list of person', () => {
+    test('it should return a list of person', ({ expect }) => {
       // arrange
       const path = 'some-path'
 
@@ -41,7 +41,7 @@ colin,false,1989-01-01,male
             ]
           `)).catch(err => { throw err })
     })
-    test('it should return an error with invalid gender', () => {
+    test('it should return an error with invalid gender', ({ expect }) => {
       // arrange
       const path = 'some-path'
 
@@ -63,7 +63,20 @@ colin,false,1989-01-01,male
                 "likeManga": true,
                 "name": "alice",
               },
-              [Error: gender not valid foo],
+              [ZodError: [
+              {
+                "received": "foo",
+                "code": "invalid_enum_value",
+                "options": [
+                  "male",
+                  "femele"
+                ],
+                "path": [
+                  "gender"
+                ],
+                "message": "Invalid enum value. Expected 'male' | 'femele', received 'foo'"
+              }
+            ]],
               {
                 "birth": 1989-01-01T00:00:00.000Z,
                 "gender": "male",

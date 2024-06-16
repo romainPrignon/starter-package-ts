@@ -1,7 +1,8 @@
 import { describe, test, expect } from 'vitest'
 import { Person } from '../entities/person.entity.js'
 import { fromPartial } from '@total-typescript/shoehorn'
-import { filterPersonBy, fromCSV } from './person.domain.js'
+import { filterPersonBy } from './person.domain.js'
+import { fromCSV } from '../services/person.service.js'
 
 describe('person domain', () => {
   describe('filterBy', () => {
@@ -19,12 +20,12 @@ describe('person domain', () => {
   })
 
   describe('fromCSV', () => {
-    test('it should parse a csv line to a person', () => {
+    test('it should parse a csv line to a person', async () => {
       // arrange
       const line: Array<string> = ['alice', 'true', '1991-01-01', 'femele']
 
       // act
-      const res = fromCSV(line)
+      const res = await fromCSV(line)
 
       // assert
       expect(res).toEqual({
@@ -35,12 +36,12 @@ describe('person domain', () => {
       })
     })
 
-    test('it should parse a csv line to a person that do not like manga', () => {
+    test('it should parse a csv line to a person that do not like manga', async () => {
       // arrange
       const line: Array<string> = ['alice', 'false', '1991-01-01', 'femele']
 
       // act
-      const res = fromCSV(line)
+      const res = await fromCSV(line)
 
       // assert
       expect(res).toEqual({
@@ -51,26 +52,61 @@ describe('person domain', () => {
       })
     })
 
-    test('it should return an error parsing a csv line with invalid birth', () => {
+    test('it should return an error parsing a csv line with invalid birth', async () => {
       // arrange
       const line: Array<string> = ['alice', 'true', '', 'femele']
 
       // act
-      const res = fromCSV(line)
+      const res = await fromCSV(line)
 
       // assert
-      expect(res).toMatchInlineSnapshot('[Error: invalid birthdate Invalid Date]')
+      expect(res).toMatchInlineSnapshot(`
+        [ZodError: [
+          {
+            "code": "invalid_date",
+            "path": [
+              "birth"
+            ],
+            "message": "Invalid date"
+          }
+        ]]
+      `)
     })
 
-    test('it should return an error parsing a csv line with invalid gender', () => {
+    // difficult to make it work due to date-fns parse or isValid
+    // test('it should return an error parsing a csv line with inexistant birthdate', async () => {
+    //   // arrange
+    //   const line: Array<string> = ['alice', 'true', '1991-02-30', 'femele']
+
+    //   // assert
+    //   // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    //   expect(fromCSV(line)).rejects.toThrowErrorMatchingInlineSnapshot()
+    // })
+
+    test('it should return an error parsing a csv line with invalid gender', async () => {
       // arrange
       const line: Array<string> = ['alice', 'true', '1991-01-01', 'foo']
 
       // act
-      const res = fromCSV(line)
+      const res = await fromCSV(line)
 
       // assert
-      expect(res).toMatchInlineSnapshot('[Error: gender not valid foo]')
+      expect(res).toMatchInlineSnapshot(`
+        [ZodError: [
+          {
+            "received": "foo",
+            "code": "invalid_enum_value",
+            "options": [
+              "male",
+              "femele"
+            ],
+            "path": [
+              "gender"
+            ],
+            "message": "Invalid enum value. Expected 'male' | 'femele', received 'foo'"
+          }
+        ]]
+      `)
     })
   })
 })

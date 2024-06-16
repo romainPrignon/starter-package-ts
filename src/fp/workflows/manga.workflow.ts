@@ -6,7 +6,7 @@
  */
 
 import { pipe } from 'remeda'
-import { andThen, otherwise, tap } from 'ramda'
+import { andThen, tap } from 'ramda'
 import { Person } from '../entities/person.entity.js'
 import { filterPersonBy } from '../domains/person.domain.js'
 import { fetchAllPerson } from '../services/person.service.js'
@@ -21,8 +21,11 @@ const filterByPersonBornAfter90sThatLikeManga = filterPersonBy(predicat)
 export const mangaWorkflow = async (path: string): Promise<Array<Person>> => {
   return pipe(
     fetchAllPerson(path),
-    otherwise(() => []), // silent errors, but might also gather into an array of errors
+    // otherwise(() => []), // silent errors, but might also gather into an array of errors; TODO: grap for later
     andThen(filterByPersonBornAfter90sThatLikeManga),
     andThen(tap(console.log))
   )
 }
+
+// mangaWorkflow('./person.fixture.csv')
+// .catch((err) => console.error('error', err))

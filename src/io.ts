@@ -1,7 +1,7 @@
 // @ts-nocheck
 import path from 'path'
 import h from 'highland'
-import * as fs from '@romainprignon/utils/native/fs'
+import * as fs from '@romainprignon/std/native/fs'
 
 
 const readIndex = async (indexPath: string): Promise<string> =>

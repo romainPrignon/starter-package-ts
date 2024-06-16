@@ -1,3 +1,3 @@
 # integration
 
-> see how starter-package-ts conform to runtimes
+> examples on how starter-package-ts conform to runtimes

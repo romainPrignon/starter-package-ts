@@ -6,7 +6,7 @@ describe('fetchAll', () => {
   test('it should return an empty list if content is empty', () => {
     // arrange
     const content = ''
-    const toEntity = () => {}
+    const toEntity = async () => {}
     const path = 'some-path'
 
     // mock
@@ -23,7 +23,7 @@ describe('fetchAll', () => {
 
   test('it should return an empty list when there is an error while reading a file', () => {
     // arrange
-    const toEntity = () => {}
+    const toEntity = async () => {}
     const path = 'some-path'
 
     // mock
@@ -41,7 +41,7 @@ describe('fetchAll', () => {
 
   test('it should return a list of entity', () => {
     // arrange
-    const toEntity = ([a, b, c]: Array<string>) => ({ a, b, c })
+    const toEntity = async ([a, b, c]: Array<string>) => ({ a, b, c })
     const path = 'some-path'
 
     // mock

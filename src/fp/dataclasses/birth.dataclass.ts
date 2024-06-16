@@ -1,13 +1,15 @@
+import * as z from 'zod'
 import { isValid } from 'date-fns/fp'
-import { Error } from '@romainprignon/utils/fp/errors/Error.js'
-import { Either } from '../../../types/either.js'
-import { Exception } from '../../../types/exception.js'
-import { raise } from '../utils/raise.util.js'
+import { ReadonlyDeep } from 'type-fest'
+import { raise } from '@romainprignon/std/fp/functions'
+import { InvariantError } from '../errors/errors.js'
 
-export type Birth = Date
+export const birthSchema = z.date()
 
-export const birth = (birthdate: Date): Either<Exception, Birth> => {
-  if (!isValid(birthdate)) raise(Error(`invalid birthdate ${birthdate}`))
+export type Birth = z.infer<typeof birthSchema>
 
-  return birthdate
+export const birth = async (birthLike: Birth): Promise<ReadonlyDeep<Birth>> => {
+  if (!isValid(birthLike)) raise(InvariantError(`invalid birthdate ${birthLike}`))
+
+  return birthLike
 }

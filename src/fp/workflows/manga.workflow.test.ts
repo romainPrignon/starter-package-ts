@@ -34,7 +34,7 @@ describe('manga workflow', () => {
         .catch(err => { throw err })
     })
 
-    test.concurrent('it should run the manga workflow with right content', async () => {
+    test.concurrent('it should run the manga workflow with right content', async ({ expect }) => {
       // arrange
       const path = 'some-path'
       const person1 = 'alice,true,1991-01-01,femele'

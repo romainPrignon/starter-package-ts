@@ -1,5 +1,5 @@
-// import { Error } from '@romainprignon/utils/fp/errors'
-// import { may } from '@romainprignon/utils/fp/functions'
+// import { Error } from '@romainprignon/std/fp/errors'
+// import { may } from '@romainprignon/std/fp/functions'
 // import { raise } from '../utils/raise.util.js' // mettre dans utils
 // import { createEffect } from 'effector'
 
