@@ -5,12 +5,12 @@
  * Return  number of email sent in success and error
  */
 
-import { pipe } from 'remeda'
 import { andThen, tap } from 'ramda'
 import { Person } from '../entities/person.entity.js'
 import { filterPersonBy } from '../domains/person.domain.js'
 import { fetchAllPerson } from '../services/person.service.js'
 import { isAfter } from 'date-fns'
+import { pipe } from '../utils/pipe.util.js'
 
 const isBornAfter90s = (p: Person) => isAfter(p.birth, '1990-01-01')
 const doLikeManga = (p: Person) => p.likeManga

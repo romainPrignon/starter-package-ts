@@ -1,8 +1,8 @@
 import { isEmptyString } from '@sindresorhus/is'
 import { readFile } from '../effects/fs.effect.js'
-import { pipe } from 'remeda'
 import { map, split, trim, andThen, otherwise } from 'ramda'
 import { match } from 'ts-pattern'
+import { pipe } from '../utils/pipe.util.js'
 
 export type FromCSV<T> = (values: Array<string>) => Promise<T>
 
@@ -10,7 +10,7 @@ export const fetchAll = <T>(fromCSV: FromCSV<T>) => async (path: string): Promis
   return pipe(
     readFile(path),
     andThen(
-      async (content) => {
+      async (content: string) => {
         return match(isEmptyString(content))
           .with(true, () => [])
           .otherwise(async () => {

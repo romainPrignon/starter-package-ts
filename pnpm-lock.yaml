@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@romainprignon/std':
-    specifier: ^4.0.3
-    version: 4.0.3
+    specifier: ^4.1.0
+    version: 4.1.0
   '@sindresorhus/is':
     specifier: ^6.1.0
     version: 6.1.0
@@ -32,9 +32,6 @@ dependencies:
   ramda:
     specifier: ^0.29.1
     version: 0.29.1
-  remeda:
-    specifier: ^1.47.0
-    version: 1.47.0
   ts-pattern:
     specifier: ^5.0.6
     version: 5.0.6
@@ -662,8 +659,8 @@ packages:
     dev: true
     optional: true
 
-  /@romainprignon/std@4.0.3:
-    resolution: {integrity: sha512-d2kdvxdJJDFvvpuPC7HR0RoowE0SXRTaiGACnJBgKiDJh02oKOhtF3pOiL82yV1beJyGc+eAlkq45o36OnduCg==}
+  /@romainprignon/std@4.1.0:
+    resolution: {integrity: sha512-XUSkYpuJgaz3liluRrrPdxFqF0ba1SSqgobKIIarpsj1C5c+QmB43jiLkl6HhbSylt4xBw8XDFEAK8SXtl4TTw==}
     engines: {node: ^16, npm: ^8}
     hasBin: true
     dependencies:
@@ -5246,10 +5243,6 @@ packages:
     dependencies:
       rc: 1.2.8
     dev: true
-
-  /remeda@1.47.0:
-    resolution: {integrity: sha512-NhB81y1itYfqF4AYnZW5nq/ukkVtuWrEmmowkkF6MSjSdjiQpYo0khK/h4mNSWjZX50WZHOU5sX80Bd2mw2RRQ==}
-    dev: false
 
   /request@2.88.2:
     resolution: {integrity: sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==}
