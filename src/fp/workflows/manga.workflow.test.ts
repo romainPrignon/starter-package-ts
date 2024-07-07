@@ -1,6 +1,9 @@
 import { describe, test, expect } from 'vitest'
 import { mangaWorkflow } from './manga.workflow.js'
 import { readFile } from '../effects/fs.effect.js'
+import { send } from '../effects/email.effect.js'
+import { Err } from '@romainprignon/std/fp/errors'
+import { raise } from '@romainprignon/std/fp/functions'
 
 describe('manga workflow', () => {
   describe('mangaWorkflow', () => {
@@ -11,10 +14,10 @@ describe('manga workflow', () => {
       readFile.use(async () => content)
 
       // act
-      mangaWorkflow(path)
+      return mangaWorkflow(path)
         .then((res) =>
           // assert
-          expect(res).toEqual([])
+          expect(res).toEqual({success: 0, failure: 0})
         )
         .catch(err => { throw err })
     })
@@ -26,10 +29,10 @@ describe('manga workflow', () => {
       readFile.use(async () => content)
 
       // act
-      mangaWorkflow(path)
+      return mangaWorkflow(path)
         .then((res) =>
           // assert
-          expect(res).toEqual([])
+          expect(res).toEqual({success: 0, failure: 0})
         )
         .catch(err => { throw err })
     })
@@ -45,26 +48,17 @@ ${person2}
 ${person3}
 `
       readFile.use(async () => content)
+      send.use(async () => raise(Err('boom', {code: 'ERR_SEND_EMAIL'})))
 
       // act
-      mangaWorkflow(path)
+      return mangaWorkflow(path)
         .then((res) =>
           // assert
           expect(res).toMatchInlineSnapshot(`
-            [
-              {
-                "birth": 1991-01-01T00:00:00.000Z,
-                "gender": "femele",
-                "likeManga": true,
-                "name": "alice",
-              },
-              {
-                "birth": 1992-01-01T00:00:00.000Z,
-                "gender": "male",
-                "likeManga": true,
-                "name": "bob",
-              },
-            ]
+            {
+              "failure": 2,
+              "success": 0,
+            }
           `)
         )
         .catch(err => { throw err })
