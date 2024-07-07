@@ -1,5 +1,5 @@
-import { Err } from '@romainprignon/std/fp/errors'
-import { may, raise } from '@romainprignon/std/fp/functions'
+import { Err } from '@romainprignon/std/fp/errors/index.js'
+import { may, raise } from '@romainprignon/std/fp/functions/index.js'
 import { createEffect } from 'effector'
 
 

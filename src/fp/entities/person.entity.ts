@@ -2,7 +2,7 @@ import { gendersSchema } from '../constants/gender.constant.js'
 import { birth, birthSchema } from '../dataclasses/birth.dataclass.js'
 import { ReadonlyDeep } from 'type-fest'
 import * as z from 'zod'
-import { mayAsync, raise } from '@romainprignon/std/fp/functions'
+import { mayAsync, raise } from '@romainprignon/std/fp/functions/index.js'
 
 export const personSchema = z.object({
   name: z.string(),
