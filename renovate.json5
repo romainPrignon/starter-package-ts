@@ -112,15 +112,6 @@
       ]
     },
     {
-      "groupName": "major express",
-      "matchPackagePatterns": [
-        "express"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ]
-    },
-    {
       "groupName": "major pnpm",
       "matchPackagePatterns": [
         "pnpm"
@@ -144,24 +135,6 @@
       "matchCurrentVersion": "<1.0.0",
       "stabilityDays": 7,
       "dependencyDashboardApproval": true
-    },
-    {
-      "groupName": "major graphql-codegen",
-      "matchPackagePatterns": [
-        "graphql-codegen"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ]
-    },
-    {
-      "groupName": "major graphql-tools",
-      "matchPackagePatterns": [
-        "graphql-tools"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ]
     }
   ]
 }
