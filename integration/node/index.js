@@ -4,4 +4,4 @@ import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-mangaWorkflow(__dirname + '/../../person.fixture.csv')
+mangaWorkflow(__dirname + '/../../fixtures/person.fixture.csv')

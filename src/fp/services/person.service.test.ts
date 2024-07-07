@@ -1,10 +1,10 @@
-import { describe, test, expect } from 'vitest'
+import { describe, test } from 'vitest'
 import { readFile } from '../effects/fs.effect.js'
 import { fetchAllPerson } from './person.service.js'
 
 describe('person service', () => {
   describe('fetchAllPerson', () => {
-    test('it should return a list of person', ({ expect }) => {
+    test('it should return a list of person', async ({ expect }) => {
       // arrange
       const path = 'some-path'
 
@@ -15,7 +15,7 @@ colin,false,1989-01-01,male
 `)
 
       // act
-      fetchAllPerson(path)
+      return fetchAllPerson(path)
         .then(
         // assert
           res => expect(res).toMatchInlineSnapshot(`
@@ -41,7 +41,7 @@ colin,false,1989-01-01,male
             ]
           `)).catch(err => { throw err })
     })
-    test('it should return an error with invalid gender', ({ expect }) => {
+    test('it should return an error with invalid gender', async ({ expect }) => {
       // arrange
       const path = 'some-path'
 
@@ -52,7 +52,7 @@ colin,false,1989-01-01,male
 `)
 
       // act
-      fetchAllPerson(path)
+      return fetchAllPerson(path)
         .then(
           // assert
           res => expect(res).toMatchInlineSnapshot(`

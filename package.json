@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "postinstall": "gitmoji --init",
-    "check": "rm -rf dist/ && tsc --build",
+    "build": "rm -rf dist/ && tsc",
     "lint": "eslint --ext ts .",
     "fmt": "eslint --fix --ext ts .",
     "test": "vitest run",
@@ -38,7 +38,7 @@
     "version:minor": "npm version --no-commit-hooks minor -m '🔖 Release v%s'",
     "version:major": "npm version --no-commit-hooks major -m '🔖 Release v%s'",
     "postversion": "git push --follow-tags",
-    "prepublishOnly": "pinst --disable && npm run check",
+    "prepublishOnly": "pinst --disable && npm run build",
     "postpublish": "pinst --enable"
   },
   "dependencies": {

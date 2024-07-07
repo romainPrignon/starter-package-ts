@@ -7,7 +7,7 @@ import { raise } from '@romainprignon/std/fp/functions'
 
 describe('manga workflow', () => {
   describe('mangaWorkflow', () => {
-    test.concurrent('it should run the manga workflow with empty content', () => {
+    test.concurrent('it should run the manga workflow with empty content', async () => {
       // arrange
       const path = 'some-path'
       const content = ''
@@ -17,7 +17,7 @@ describe('manga workflow', () => {
       return mangaWorkflow(path)
         .then((res) =>
           // assert
-          expect(res).toEqual({success: 0, failure: 0})
+          expect(res).toEqual({ success: 0, failure: 0 })
         )
         .catch(err => { throw err })
     })
@@ -32,7 +32,7 @@ describe('manga workflow', () => {
       return mangaWorkflow(path)
         .then((res) =>
           // assert
-          expect(res).toEqual({success: 0, failure: 0})
+          expect(res).toEqual({ success: 0, failure: 0 })
         )
         .catch(err => { throw err })
     })
@@ -48,7 +48,7 @@ ${person2}
 ${person3}
 `
       readFile.use(async () => content)
-      send.use(async () => raise(Err('boom', {code: 'ERR_SEND_EMAIL'})))
+      send.use(async () => raise(Err('boom', { code: 'ERR_SEND_EMAIL' })))
 
       // act
       return mangaWorkflow(path)

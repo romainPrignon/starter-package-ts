@@ -3,7 +3,6 @@ import { Person } from '../entities/person.entity.js'
 import { filterPersonBy } from '../domains/person.domain.js'
 import { fetchAllPerson } from '../services/person.service.js'
 import { isAfter } from 'date-fns'
-// import { pipe } from '../utils/pipe.util.js'
 import * as emailService from '../services/email.service.js'
 import { isBoolean } from '@sindresorhus/is'
 import { Err } from '@romainprignon/std/_internal/error/Error.js'
@@ -29,12 +28,12 @@ export const mangaWorkflow = async (path: string): Promise<any> => {
     // fetchAllPerson(path),
     // otherwise(() => []), // silent errors, but might also gather into an array of errors; TODO: grap for later
     andThen(filterByPersonBornAfter90sThatLikeManga),
-    andThen(map((person: Person) => emailService.send({to: person.name, content: 'marketing content'}))),
-    andThen((promises) => Promise.all(promises)),
+    andThen(map(async (person: Person) => emailService.send({ to: person.name, content: 'marketing content' }))),
+    andThen(async (promises) => Promise.all(promises)),
     andThen(tap(console.log)),
-    andThen(reduce((acc, eitherPerson: boolean | Err) => countEmailStatus(acc, eitherPerson), {success: 0, failure: 0}))
+    andThen(reduce((acc, eitherPerson: boolean | Err) => countEmailStatus(acc, eitherPerson), { success: 0, failure: 0 }))
   )(fetchAllPerson(path))
 }
 
-// mangaWorkflow('./person.fixture.csv')
+// mangaWorkflow('./fixtures/person.fixture.csv')
 // .catch((err) => console.error('error', err))
