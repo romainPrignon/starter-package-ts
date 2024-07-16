@@ -1,6 +1,6 @@
 {
   "name": "starter-package-ts",
-  "version": "1.10.1",
+  "version": "2.0.0",
   "description": "starter-package-ts description",
   "author": "Romain Prignon <pro.rprignon@gmail.com>",
   "license": "MIT",
@@ -8,30 +8,29 @@
     "type": "git",
     "url": "git+https://github.com/romainPrignon/starter-package-ts.git"
   },
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": "12",
-    "npm": "6"
+    "node": "20.x",
+    "pnpm": "8.x"
   },
   "files": [
     "dist",
-    "type",
     "CHANGELOG.md",
     "LICENSE.md",
-    "package-lock.json",
+    "pnpm-lock.yaml",
     "package.json",
     "README.md"
   ],
   "scripts": {
     "postinstall": "gitmoji --init",
-    "compile": "rm -rf dist/ && tsc -p src/",
-    "lint": "npm run lint:src && npm run lint:test",
-    "lint:src": "tslint --project src/tsconfig.json",
-    "lint:test": "tslint --project test/tsconfig.json",
-    "test": "jest --maxWorkers=50%",
+    "build": "rm -rf dist/ && tsc",
+    "lint": "eslint --ext ts .",
+    "fmt": "eslint --fix --ext ts .",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
     "test:debug": "npm run test --detectOpenHandles --forceExit --runInBand --no-cache",
-    "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch",
     "changelog": "gitmoji-changelog",
     "version": "npm run changelog && git add CHANGELOG.md",
@@ -39,36 +38,42 @@
     "version:minor": "npm version --no-commit-hooks minor -m '🔖 Release v%s'",
     "version:major": "npm version --no-commit-hooks major -m '🔖 Release v%s'",
     "postversion": "git push --follow-tags",
-    "prepublishOnly": "pinst --disable && npm run compile",
+    "prepublishOnly": "pinst --disable && npm run build",
     "postpublish": "pinst --enable"
   },
   "dependencies": {
-    "@romainprignon/utils": "1",
-    "@sindresorhus/is": "2",
-    "highland": "2",
-    "immer": "5",
-    "make-error-cause": "2",
-    "moment": "2",
-    "runtypes": "4"
+    "@romainprignon/std": "^4.1.0",
+    "@sindresorhus/is": "^6.1.0",
+    "awilix": "^10.0.1",
+    "date-fns": "^3.3.1",
+    "debug": "^4.3.4",
+    "effector": "^23.2.0",
+    "immer": "^10.0.3",
+    "ix": "^5.0.0",
+    "ramda": "^0.29.1",
+    "ts-pattern": "^5.0.6",
+    "type-fest": "^4.10.1",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/jest": "24",
-    "@types/highland": "2",
-    "@types/node": "12",
-    "gitmoji-changelog": "2",
-    "gitmoji-cli": "3",
-    "husky": "3",
-    "jest": "24",
-    "pinst": "2",
-    "ts-jest": "24",
-    "tslint": "5",
-    "tslint-config-standard": "9",
-    "tslint-immutable": "6",
-    "typescript": "3.7.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run compile && npm run test:coverage"
-    }
+    "@total-typescript/shoehorn": "^0.1.2",
+    "@types/debug": "^4.1.12",
+    "@types/node": "^20.11.9",
+    "@types/ramda": "^0.29.11",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "@vitest/coverage-v8": "^1.2.2",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-functional": "^6.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vitest": "^0.3.20",
+    "gitmoji-changelog": "^2.3.0",
+    "gitmoji-cli": "^9.0.0",
+    "husky": "^9.0.6",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.2"
   }
 }

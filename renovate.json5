@@ -1,0 +1,140 @@
+{
+  "enabled": true,
+  "dependencyDashboard": true,
+  "timezone": "Europe/Paris",
+  "schedule": [
+    "after 7pm and before 7am every weekday",
+    "every weekend"
+  ],
+  "rangeStrategy": "bump",
+  "prConcurrentLimit": 5,
+  "labels": ["dependencies", "type/chore"],
+  "enabledManagers": [
+    "npm",
+    "asdf",
+    "dockerfile"
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": false
+  },
+  "packageRules": [
+    {
+      "matchCurrentVersion": "<1.0.0",
+      "stabilityDays": 7,
+      "dependencyDashboardApproval": true
+    },
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "stabilityDays": 7,
+      "dependencyDashboardApproval": true
+    },
+    {
+      "groupName": "non-major all",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "excludePackageNames": [
+        "@types/node",
+        "ts-node",
+        "typescript"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": ">=1.0.0"
+    },
+    {
+      "groupName": "linter",
+      "matchPackagePatterns": [
+        "@typescript-eslint",
+        "eslint",
+        "prettier"
+      ],
+      "automerge": true
+    },
+    {
+      "groupName": "types",
+      "matchPackagePatterns": [
+        "@types/*"
+      ],
+      "excludePackageNames": [
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": ">=1.0.0",
+      "automerge": true
+    },
+    {
+      "groupName": "non-major typescript",
+      "matchPackageNames": [
+        "ts-node",
+        "typescript"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "automerge": true
+    },
+    {
+      "groupName": "non-major pnpm",
+      "matchPackageNames": [
+        "pnpm"
+      ],
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
+      "matchPaths": [
+        ".github/**/*.yml",
+        ".tool-versions",
+        "Dockerfile",
+        "package.json",
+        "pnpm-lock.yaml"
+      ],
+      "automerge": true
+    },
+    {
+      "groupName": "major typescript",
+      "matchPackageNames": [
+        "ts-node",
+        "typescript"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor"
+      ]
+    },
+    {
+      "groupName": "major pnpm",
+      "matchPackagePatterns": [
+        "pnpm"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "matchPaths": [
+        ".github/**/*.yml",
+        ".tool-versions",
+        "Dockerfile",
+        "package.json",
+        "pnpm-lock.yaml"
+      ]
+    },
+    {
+      "groupName": "major vitest",
+      "matchPackagePatterns": [
+        "vitest"
+      ],
+      "matchCurrentVersion": "<1.0.0",
+      "stabilityDays": 7,
+      "dependencyDashboardApproval": true
+    }
+  ]
+}

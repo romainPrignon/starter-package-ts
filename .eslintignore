@@ -1,0 +1,7 @@
+coverage/
+dist/
+integration/
+node_modules/
+vite.config.ts
+vitest.config.ts
+vitest.setup.ts
