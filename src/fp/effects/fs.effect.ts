@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import { createEffect } from 'effector'
-import { Err } from '@romainprignon/std/fp/errors'
-import { mayAsync, raise } from '@romainprignon/std/fp/functions'
+import { Err } from '@romainprignon/std/fp/errors/index.js'
+import { mayAsync, raise } from '@romainprignon/std/fp/functions/index.js'
 
 export const readFile = createEffect(async (path: string): Promise<string> => {
   return mayAsync(

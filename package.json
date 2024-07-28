@@ -24,6 +24,7 @@
     "README.md"
   ],
   "scripts": {
+    "dev": "npm run build && node dist/oop/main.js",
     "postinstall": "gitmoji --init",
     "build": "rm -rf dist/ && tsc",
     "lint": "eslint --ext ts .",
