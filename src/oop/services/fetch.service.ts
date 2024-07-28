@@ -2,15 +2,19 @@ import { isEmptyString } from '@sindresorhus/is'
 import { FileEffect } from '../effects/fs.effect.js'
 import { match } from 'ts-pattern'
 
+async function * combine (gen: any) {
+  for await (const g of gen) {
+    yield * g
+  }
+}
 
 export abstract class FetchService<T> {
   constructor(private fileEffect: FileEffect) {}
 
   abstract fromCSV(values: Array<string>): Promise<T>
 
-  // TODO: tester de reecrire avec ix pour voir la diff
-  async fetchAll(path: string): Promise<Array<T>> {
-    return this.fileEffect
+  async * fetchAll (path: string): AsyncGenerator<T> {
+    yield * await this.fileEffect
       .readFile(path)
       .then(content =>
         match(isEmptyString(content))
@@ -27,7 +31,8 @@ export abstract class FetchService<T> {
         )
       )
       .then(lines => lines.map(line => this.fromCSV(line)))
-      .then(lines => Promise.all(lines))
+      .then(lines => lines.map(function * (line) {yield line}))
+      .then(gen => combine(gen))
       // .catch(() => [])
   }
 }

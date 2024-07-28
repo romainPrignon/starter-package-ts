@@ -5,8 +5,8 @@ import { isAfter } from 'date-fns'
 import * as emailService from '../services/email.service.js'
 import { isBoolean } from '@sindresorhus/is'
 import { Err } from '@romainprignon/std/_internal/error/Error.js'
-import { filter, map, tap } from 'ix/asynciterable/operators/index.js'
-import { from } from 'ix/asynciterable/index.js'
+import { filter, map, tap } from 'ix/asynciterable/operators/index'
+import { from } from 'ix/asynciterable/index'
 
 const isBornAfter90s = (p: Person) => isAfter(p.birth, '1990-01-01')
 const doLikeManga = (p: Person) => p.likeManga

@@ -1,8 +1,12 @@
-import { PersonDomain } from '../domains/person.domain.js'
-import { FetchPersonService } from '../services/person.service.js'
-
 import { isBoolean } from '@sindresorhus/is'
 import { Err } from '@romainprignon/std/_internal/error/Error.js'
+import { AsyncIterableX as AsyncIterable } from 'ix/asynciterable';
+import 'ix/add/asynciterable-operators/filter';
+import 'ix/add/asynciterable-operators/map';
+import 'ix/add/asynciterable-operators/reduce';
+
+import { PersonDomain } from '../domains/person.domain.js'
+import { FetchPersonService } from '../services/person.service.js'
 import { EmailService } from '../services/email.service.js'
 
 /**
@@ -14,14 +18,14 @@ import { EmailService } from '../services/email.service.js'
 export class MangaWorkflow {
   constructor(private fetchPersonService: FetchPersonService, private personDomain: PersonDomain, private emailService: EmailService) {}
 
-  // TODO: ix ?
-  async run(path: string): Promise<number> {
-    return this.fetchPersonService
-      .fetchAll(path)
-      .then(persons => persons.filter(p => this.personDomain.isBornAfter90sAndDoLikeManga(p)))
-      .then(persons => persons.map(p => this.emailService.send({ to: p.name, content: 'marketing content' })))
-      .then(emails => Promise.all(emails))
-      .then(emails => emails.reduce(this.countEmailStatus, {success: 0, failure: 0}))
+  async run(path: string) {
+    return AsyncIterable.from(this.fetchPersonService.fetchAll(path))
+      .filter(p => this.personDomain.isBornAfter90sAndDoLikeManga(p))
+      .map(p => this.emailService.send({ to: p.name, content: 'marketing content' }))
+      .reduce({
+        callback: (acc = {success: 0, failure: 0}, email) => this.countEmailStatus(acc, email),
+        seed:{success: 0, failure: 0}
+      })
   }
 
   private countEmailStatus = (acc: any, email: boolean | Err) => {
