@@ -18,7 +18,9 @@ container.register({
   mangaWorkflow: awilix.asClass(MangaWorkflow),
   fetchPersonService: awilix.asClass(FetchPersonService),
   emailService: awilix.asClass(EmailService),
-  emailEffect: awilix.asClass(EmailEffect)
+  emailEffect: awilix.asClass(EmailEffect),
+  math: awilix.asValue(Math),
+  console: awilix.asValue(console)
 })
 
 const main = async () => {

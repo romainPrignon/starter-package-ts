@@ -4,7 +4,7 @@ import { FetchService } from './fetch.service.js'
 
 export class FetchPersonService extends FetchService<Person> {
 
-  private async parse(personLike: Person & unknown): Promise<Person> {
+  private async parse(personLike: Person): Promise<Person> {
     return personSchema.parseAsync(personLike)
   }
 

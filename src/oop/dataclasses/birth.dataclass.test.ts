@@ -21,7 +21,7 @@ describe('birth dataclass', () => {
       const invalidDate = new Date('')
 
       // assert
-      expect(Birth.from(invalidDate)).rejects.toMatchInlineSnapshot('[InvariantError: invalid birthdate Invalid Date]')
+      expect(Birth.from(invalidDate)).rejects.toMatchInlineSnapshot('[Error: invalid birthdate Invalid Date]')
     })
   })
 })
