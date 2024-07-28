@@ -52,3 +52,10 @@ npm run publish
 ## License
 
 The code is available under the [MIT license](LICENSE.md).
+
+## fake problem that this lib try to solve
+- Retrieve people from files in the directory (I/O)
+- Filter people based on a business rule (age, etc.)
+- Send an email to these people (50% error rate)
+- Save the status of the email delivery
+- Calculate the number of emails sent successfully and in error
