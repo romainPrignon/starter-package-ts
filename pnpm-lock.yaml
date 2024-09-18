@@ -29,6 +29,15 @@ dependencies:
   ix:
     specifier: ^5.0.0
     version: 5.0.0
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
+  radash:
+    specifier: ^12.1.0
+    version: 12.1.0
+  rambda:
+    specifier: ^9.3.0
+    version: 9.3.0
   ramda:
     specifier: ^0.29.1
     version: 0.29.1
@@ -49,6 +58,9 @@ devDependencies:
   '@types/debug':
     specifier: ^4.1.12
     version: 4.1.12
+  '@types/lodash':
+    specifier: ^4.17.7
+    version: 4.17.7
   '@types/node':
     specifier: ^20.11.9
     version: 20.11.9
@@ -417,7 +429,7 @@ packages:
       git-raw-commits: 2.0.11
       git-remote-origin-url: 2.0.0
       git-semver-tags: 4.1.1
-      lodash: 4.17.15
+      lodash: 4.17.21
       node-emoji: 1.11.0
       normalize-package-data: 2.5.0
       read-pkg-up: 7.0.1
@@ -436,7 +448,7 @@ packages:
       git-semver-tags: 4.1.1
       handlebars: 4.7.8
       immutadot: 1.0.0
-      lodash: 4.17.15
+      lodash: 4.17.21
       semver: 5.7.2
     dev: true
 
@@ -729,6 +741,10 @@ packages:
 
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/lodash@4.17.7:
+    resolution: {integrity: sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==}
     dev: true
 
   /@types/minimist@1.2.5:
@@ -2913,7 +2929,7 @@ packages:
     hasBin: true
     dependencies:
       dargs: 7.0.0
-      lodash: 4.17.15
+      lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
       through2: 4.0.2
@@ -2954,7 +2970,7 @@ packages:
       inquirer: 6.5.2
       issue-reporter: 0.2.0
       libnpm: 3.0.1
-      lodash: 4.17.15
+      lodash: 4.17.21
       pom-parser: 1.2.0
       rc: 1.2.8
       read-pkg-up: 7.0.1
@@ -3385,7 +3401,7 @@ packages:
       cli-width: 2.2.1
       external-editor: 3.1.0
       figures: 2.0.0
-      lodash: 4.17.15
+      lodash: 4.17.21
       mute-stream: 0.0.7
       run-async: 2.4.1
       rxjs: 6.6.7
@@ -4033,10 +4049,6 @@ packages:
 
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
-    dev: true
-
-  /lodash@4.17.15:
-    resolution: {integrity: sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==}
     dev: true
 
   /lodash@4.17.21:
@@ -5130,6 +5142,15 @@ packages:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
     dev: true
+
+  /radash@12.1.0:
+    resolution: {integrity: sha512-b0Zcf09AhqKS83btmUeYBS8tFK7XL2e3RvLmZcm0sTdF1/UUlHSsjXdCcWNxe7yfmAlPve5ym0DmKGtTzP6kVQ==}
+    engines: {node: '>=14.18.0'}
+    dev: false
+
+  /rambda@9.3.0:
+    resolution: {integrity: sha512-cl/7DCCKNxmsbc0dXZTJTY08rvDdzLhVfE6kPBson1fWzDapLzv0RKSzjpmAqP53fkQqAvq05gpUVHTrUNsuxg==}
+    dev: false
 
   /ramda@0.29.1:
     resolution: {integrity: sha512-OfxIeWzd4xdUNxlWhgFazxsA/nl3mS4/jGZI5n00uWOoSSFRhC1b6gl6xvmzUamgmqELraWp0J/qqVlXYPDPyA==}

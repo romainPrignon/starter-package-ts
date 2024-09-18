@@ -1,7 +1,7 @@
 import * as z from 'zod'
 import { isValid } from 'date-fns/fp'
 import { ReadonlyDeep } from 'type-fest'
-import { raise } from '@romainprignon/std/fp/functions'
+import { raise } from '@romainprignon/std/fp/functions/index.js'
 import { InvariantError } from '../errors/errors.js'
 
 export const birthSchema = z.date()

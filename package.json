@@ -24,7 +24,8 @@
     "README.md"
   ],
   "scripts": {
-    "dev": "npm run build && node dist/oop/main.js",
+    "err": "tsx src/err.js",
+    "dev": "npm run build && node dist/fp/workflows/manga.workflow.js",
     "postinstall": "gitmoji --init",
     "build": "rm -rf dist/ && tsc",
     "lint": "eslint --ext ts .",
@@ -51,6 +52,9 @@
     "effector": "^23.2.0",
     "immer": "^10.0.3",
     "ix": "^5.0.0",
+    "lodash": "^4.17.21",
+    "radash": "^12.1.0",
+    "rambda": "^9.3.0",
     "ramda": "^0.29.1",
     "ts-pattern": "^5.0.6",
     "type-fest": "^4.10.1",
@@ -59,6 +63,7 @@
   "devDependencies": {
     "@total-typescript/shoehorn": "^0.1.2",
     "@types/debug": "^4.1.12",
+    "@types/lodash": "^4.17.7",
     "@types/node": "^20.11.9",
     "@types/ramda": "^0.29.11",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
